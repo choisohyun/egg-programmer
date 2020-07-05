@@ -2,7 +2,7 @@
 title: BOJJava-1100번-하얀-칸
 tags: [javascript]
 date: 2019-10-31 16:29:33
-path: /BOJJava-1100번-하얀-칸
+path: blog/BOJJava-1100번-하얀-칸
 cover: ''
 excerpt: BOJJava-1100번-하얀-칸
 ---
