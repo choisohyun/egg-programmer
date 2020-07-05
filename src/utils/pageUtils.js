@@ -22,9 +22,7 @@ const Utils = {
    * @return {string} Resolved url with trailing slash.
    */
   resolvePageUrl: (...path) => {
-    let resolvedUrl = Utils.resolveUrl(...path);
-    resolvedUrl = resolvedUrl.replace(/\/blog\/blog/, '/blog');
-
+    const resolvedUrl = Utils.resolveUrl(...path);
     return `${resolvedUrl}/`;
   },
   /**
