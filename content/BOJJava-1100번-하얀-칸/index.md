@@ -1,9 +1,9 @@
 ---
-title: BOJJava-1100번-하얀-칸
-tags: [javascript]
+title: BOJ Java 1100번 - 하얀 칸
+tags: [java]
 date: 2019-10-31 16:29:33
 path: blog/BOJJava-1100번-하얀-칸
-cover: './no-image.jpg'
+cover: ../no-image.jpg
 excerpt: BOJJava-1100번-하얀-칸
 ---
 
