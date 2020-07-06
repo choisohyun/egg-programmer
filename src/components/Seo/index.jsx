@@ -71,6 +71,8 @@ function SEO({
                 { name: 'twitter:image:alt', content: description },
                 { name: 'twitter:site', content: Config.author },
                 { name: 'twitter:creator', content: Config.author },
+                /* Google Search Console */
+                { name: 'google-site-verification', content: 'YJ2DhXevKthgJDOKFnjXoJm_Dnn1uSXP6oShb7JQs20' },
               ]
                 .concat(metaKeywords) // Keywords
                 .concat(meta || []) // Other provided metadata
