@@ -8,9 +8,8 @@ const TagCard = (props) => {
   const {
     img, name, description, color,
   } = props;
-  const tagPage = Config.pages.tag;
   return (
-    <Link className={style.tagCard} to={Utils.resolvePageUrl(tagPage, name)}>
+    <Link className={style.tagCard} to={Utils.resolvePageUrl(name)}>
       <div className={style.tagCard}>
         <div
           className={style.tagImg}
