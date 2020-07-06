@@ -1,0 +1,70 @@
+---
+title: "[Programmers][Javascript] 124 나라의 숫자"
+tags: [undefined]
+date: 2020-06-03 21:23:46
+path: blog/ProgrammersJavascript-124-나라의-숫자
+cover: ./no-image.png
+excerpt: ProgrammersJavascript-124-나라의-숫자
+---
+글이 정상적으로 보이지 않는다면 아래 주소로 접속해 주세요.
+https://egg-programmer.tistory.com/246
+# 문제
+
+[124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899#)
+
+# 문제 설명
+
+>  
+> 10진수를 문제만의 규칙인 124진법으로 변환시키는 문제
+> 
+
+1.   parameter로 들어온 숫자가 0보다 클 때 동안 `` while ``문을 돌면서 124진수로 변환을 한다.
+2.   `` 1, 2, 4 ``라는 3개의 수로 바꾸는 것이기 때문에 원래의 10진수에서 __몫__과 __나머지__가 필요하다.
+
+*   몫은 처음에 parameter인 n으로 다시 저장되어 while문을 벗어나는 수가 될 수 있게 해 준다.
+*   나머지는 `` restNum ``이라는 나머지 저장 변수에 저장해 124진수를 만드는 데에 사용한다.
+
+<ol start="3">
+<li>몫과 나머지를 2에서 구했으니 이것을 바탕으로 2진수를 구하는 방법과 비슷하게 3을 나눠서 답을 구해 보았다.</li>
+</ol>
+
+*   나머지가 0일 때는 4로 치환했다.
+*   어라? 답이 `` 4가 아닌 14 ``로 나온다.
+*   아래는 푼 과정을 그린 것이다.
+
+![124 규칙찾기](https://user-images.githubusercontent.com/30427711/83635365-11043580-a5df-11ea-8fc1-90910bc04e0b.jpeg)
+
+<ol start="4">
+<li>여기서 규칙을 찾을 수 있었다. 3의 배수는 모두 한 단계씩 큰 숫자가 나왔다.</li>
+</ol>
+
+*   그럼 어떻게 해야 할까?
+
+<ol start="5">
+<li>나머지가 0일 때(3의 배수일 때), 해당 몫에서 1을 빼줘야 한다. 1을 빼면 자리수가 하나 올라가는 것을 막아 문제에서 원하는 답을 찾을 수 있다.</li>
+</ol>
+
+![123 설명 이미지](https://user-images.githubusercontent.com/30427711/83634943-5aa05080-a5de-11ea-8dc8-d55592258c57.jpeg)
+
+<ol start="6">
+<li>나머지들을 while문에 있는 동안 계속 앞에 붙여 주면 끝난다.</li>
+</ol>
+
+# 성공 코드
+
+<pre><code class="language-js">const solution = (n) =&gt; {
+  let answer = "";
+  let restNum = 0;
+
+  while (n &gt; 0) {
+    restNum = n % 3;
+    n = Math.floor(n / 3);
+    if (restNum == 0) {
+      n -= 1;
+      restNum = 4;
+    }
+    answer = restNum + answer;
+  }
+
+  return answer;
+};</code></pre>
